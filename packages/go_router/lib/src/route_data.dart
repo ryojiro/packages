@@ -153,6 +153,7 @@ abstract class ShellRouteData extends RouteData {
   static ShellRoute $route<T extends ShellRouteData>({
     required T Function(GoRouterState) factory,
     GlobalKey<NavigatorState>? navigatorKey,
+    List<NavigatorObserver>? observers,
     List<RouteBase> routes = const <RouteBase>[],
   }) {
     T factoryImpl(GoRouterState state) {
@@ -193,6 +194,7 @@ abstract class ShellRouteData extends RouteData {
       builder: builder,
       pageBuilder: pageBuilder,
       routes: routes,
+      observers: observers,
       navigatorKey: navigatorKey,
     );
   }
